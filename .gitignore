@@ -16,3 +16,7 @@ handcar/standalone/
 make_area/
 output/
 build/
+*.log
+*.S
+*.ELF
+utils/builder/test_builder/riscv/input/xml/

@@ -18,6 +18,7 @@
 
 #include <map>
 
+#include <string>
 #include "Defines.h"
 
 namespace Force {
