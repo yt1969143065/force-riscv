@@ -16,4 +16,4 @@
 
 
 def configure_memory(interface):
-    interface.addMemoryRange(0, 0, 0xFFFFFFFFFFFF)
+    interface.addMemoryRange(0, 0x80000000, 0xFFFFFFFF)
