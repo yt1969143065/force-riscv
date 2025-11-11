@@ -34,7 +34,7 @@ class MainSequence(Sequence):
         theBank = 0
         theType = "D"
 
-        theAddressRange = "0x1F00-0x1FFF"
+        theAddressRange = "0x80201F00-0x80201FFF"
 
         if self.getGlobalState("AppRegisterWidth") == 32:
             ldstr_double_ops = ldstr_word_ops
@@ -68,16 +68,16 @@ class MainSequence(Sequence):
         # Try different address ranges
         for _ in range(50):
 
-            theAddressRange = ["0x60200-0x611FF"]
+            theAddressRange = ["0x80260200-0x802611FF"]
 
-            if self.getGlobalState("AppRegisterWidth") == 32:
-                theAddressRange += ["0xF2200000-0xFFEFFFFF"]
-                theAddressRange += ["0xFFF00000-0xFFFFFFFF"]
-                theAddressRange += ["0x1000-0x1FFF,0x88000-0x89800"]
-            else:
-                theAddressRange += ["0xF220000000-0xFFFFFFFFFF"]
-                theAddressRange += ["0xFFF00000000-0xFFFFFFFFFFF"]
-                theAddressRange += ["0x1000-0x1FFF,0x88000-0x89800,0xFFF00000000-0xFFFFFFFFFFF"]
+            #if self.getGlobalState("AppRegisterWidth") == 32:
+            #    theAddressRange += ["0xF2200000-0xFFEFFFFF"]
+            #    theAddressRange += ["0xFFF00000-0xFFFFFFFF"]
+            #    theAddressRange += ["0x1000-0x1FFF,0x88000-0x89800"]
+            #else:
+            #    theAddressRange += ["0xF220000000-0xFFFFFFFFFF"]
+            #    theAddressRange += ["0xFFF00000000-0xFFFFFFFFFFF"]
+            #    theAddressRange += ["0x1000-0x1FFF,0x88000-0x89800,0xFFF00000000-0xFFFFFFFFFFF"]
 
             for addrRange in theAddressRange:
 
