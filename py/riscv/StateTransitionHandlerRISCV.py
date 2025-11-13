@@ -312,7 +312,7 @@ class SystemRegisterStateTransitionHandlerRISCV(StateTransitionHandler):
     #  @param aRegValGprIndex A GPR containing the vtype register value.
     def _processVtypeStateElement(self, aRegValGprIndex):
         # Set rd and rs1 to x0 to preserve the value of vl
-        self.genInstruction("VSETVL##RISCV", {"rd": 0, "rs1": 0, "rs2": aRegValGprIndex})
+        self.genInstruction("VSETVL##RISCV", {"rd": 31, "rs1": 0, "rs2": aRegValGprIndex})
 
     # Execute the State change represented by the vl StateElement.
     #
