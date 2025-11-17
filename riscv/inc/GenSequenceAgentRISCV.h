@@ -44,6 +44,7 @@ namespace Force {
     void GetLoadFPRSequence(const Register* regPtr, uint64 loadValue, std::vector<GenRequest* >& reqSeq, const Register* gprPtr = nullptr); //!< Provide an instruction sequence to load RISC-V FPR registers.
     void GetLoadVecRegSequence(const Register* regPtr, uint64 loadValue, std::vector<GenRequest* >& reqSeq, const Register* gprPtr = nullptr); //!< Provide an instruction sequence to load RISC-V VECREG registers.
 
+    void GetHaltSequence(std::vector<GenRequest* >& req_seq) const; 
     void GetBranchToSelfSequence(std::vector<GenRequest* >& req_seq) const; //!< Provide an instruction sequence to branch to self.
     void GetStore64BitRegisterSequence(const Register* pSrcRegister, Register* pBaseRegister, std::vector<GenRequest* >& reqSeq) override; //!< Provide an instruction sequence to store GPR registers
     void BranchToTarget() override; //!< Override base class for BranchToTarget sequence.

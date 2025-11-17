@@ -299,6 +299,18 @@ namespace Force {
     str_req->AddOperandRequest("simm12", 0);
     reqSeq.push_back(str_req);
   }
+  void GenSequenceAgentRISCV::GetHaltSequence(vector<GenRequest* >& req_seq) const
+  {
+    const char* add_instr = "ADD##RISCV";
+    auto add_req = new GenInstructionRequest(add_instr);
+    add_req->AddOperandRequest("rd", 10);
+    add_req->AddOperandRequest("rs1", 0);
+    add_req->AddOperandRequest("rs2", 0);
+    req_seq.push_back(add_req);
+    const char* halt_instr = "HALT##RISCV";
+    auto halt_req = new GenInstructionRequest(halt_instr);
+    req_seq.push_back(halt_req);
+  }
 
   void GenSequenceAgentRISCV::GetBranchToSelfSequence(vector<GenRequest* >& req_seq) const
   {
@@ -597,6 +609,7 @@ namespace Force {
 
   void GenSequenceAgentRISCV::GetEndOfTestSequence(vector<GenRequest*>& rReqSeq) const
   {
+    GetHaltSequence(rReqSeq);
     GetBranchToSelfSequence(rReqSeq);
   }
 
