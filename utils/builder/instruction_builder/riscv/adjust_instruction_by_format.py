@@ -807,5 +807,8 @@ def adjust_const_only(instr):
     elif instr_full_ID.startswith("EBREAK"):
         instr.group = "System"
         return True
+    elif instr_full_ID.startswith("HALT"):
+        instr.group = "System"
+        return True
 
     return False

@@ -18,6 +18,10 @@
 Add RISCV main instruction starter information in this file.
 -->
 <instruction_file>
+  <I name="HALT" isa="RISCV" group="General" extension="RV64I">
+    <O name="const_bits" type="Constant" bits="31-25,24-20,19-15,14-12,11-7,6-0" value="00000000000001010000000001101011"/>
+    <asm format="HALT"/>
+  </I>
   <I name="ADD" isa="RISCV" group="General" extension="RV32I">
     <O name="const_bits" type="Constant" bits="31-25,14-12,6-0" value="00000000000110011"/>
     <O name="rs2" type="Register" bits="24-20"/>

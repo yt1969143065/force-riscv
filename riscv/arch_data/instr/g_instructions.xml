@@ -674,6 +674,10 @@
     </O>
     <asm format="FSW %s, %s, %s" op1="simm12" op2="rs1" op3="rs2"/>
   </I>
+  <I name="HALT" isa="RISCV" group="System" extension="RV64I">
+    <O name="const_bits" type="Constant" bits="31-25,24-20,19-15,14-12,11-7,6-0" value="00000000000001010000000001101011"/>
+    <asm format="HALT"/>
+  </I>
   <I name="JAL" isa="RISCV" class="BranchInstruction" group="General" extension="RV32I">
     <O name="const_bits" type="Constant" bits="6-0" value="1101111"/>
     <O name="rd" type="GPR" bits="11-7" access="Write" choices="GPRs"/>
